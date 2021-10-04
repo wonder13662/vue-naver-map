@@ -3,13 +3,13 @@
     :map-id="'default-map'"
     :height="'100vh'"
     :width="'100%'"
-    :bounds="bounds"
-    :markers="markers"
+    :bound="bound"
   />
 </template>
 
 <script>
 import BaseNaverMap from '@/components/BaseNaverMap';
+import boundFactory from '@/lib/naverMap/boundFactory';
 
 export default {
   name: 'DefaultMap',
@@ -29,7 +29,7 @@ export default {
     };
   },
   computed: {
-    markers() {
+    bound() { // TODO SubDeliveryMap.vue와 DeliveryMap.vue가 같은 로직을 공유하고 있음. 한군데서 모아서 활용 필요.
       const {
         pickupPointLatitude,
         pickupPointLongitude,
@@ -40,31 +40,7 @@ export default {
         dropPointLongitude,
       } = this.dropPoint;
 
-      return [
-        {
-          name: '픽업지',
-          lat: pickupPointLatitude,
-          lng: pickupPointLongitude,
-        },
-        {
-          name: '배송지',
-          lat: dropPointLatitude,
-          lng: dropPointLongitude,
-        },
-      ];
-    },
-    bounds() {
-      const {
-        pickupPointLatitude,
-        pickupPointLongitude,
-      } = this.pickupPoint;
-
-      const {
-        dropPointLatitude,
-        dropPointLongitude,
-      } = this.dropPoint;
-
-      const bounds = {
+      const bound = {
         sw: {
           lat: Math.min(pickupPointLatitude, dropPointLatitude),
           lng: Math.min(pickupPointLongitude, dropPointLongitude),
@@ -78,15 +54,16 @@ export default {
       // 픽업지부터 도착지의 너비만큼 Padding offset을 추가해준다.
       // (픽업지와 도착지가 화면의 가운데에 보이도록 하기 위한 목적)
       // 1. latitude(위도) offset 구하기
-      const latDiff = bounds.ne.lat - bounds.sw.lat;
+      const latDiff = bound.ne.lat - bound.sw.lat;
       // 2. longitude(경도) offset 구하기
-      const lngDiff = bounds.ne.lng - bounds.sw.lng;
+      const lngDiff = bound.ne.lng - bound.sw.lng;
 
       const {
         sw,
         ne,
-      } = bounds;
-      return {
+      } = bound;
+
+      const result = {
         sw: {
           lat: sw.lat - latDiff,
           lng: sw.lng - lngDiff,
@@ -96,6 +73,8 @@ export default {
           lng: ne.lng + lngDiff,
         },
       };
+
+      return boundFactory.createBound(result.sw, result.ne);
     },
   },
 };
