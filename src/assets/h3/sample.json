@@ -1,0 +1,69 @@
+{
+  "directorGroups": [
+    {
+      "directorGroupId": "a3a0f989-8fde-4168-bcef-91f536f14b20",
+      "name": "초기디렉터0",
+      "DirectorGroupPhysicalGroups": [
+        {
+          "PhysicalGroup": {
+            "physicalGroupId": "cd96ed02-211e-4c27-b051-f01c0d93dfbb",
+            "name": "physicalGroup0",
+            "type": "base",
+            "PhysicalGroupH3Polygons": [
+              {
+                "H3Polygon": {
+                    "h3Index": "8930e0ac35bffff",
+                    "H3PolygonStores": []
+                }
+              },
+              {
+                "H3Polygon": {
+                    "h3Index": "8930e0ac34bffff",
+                    "H3PolygonStores": []
+                }
+              },
+              {
+                "H3Polygon": {
+                    "h3Index": "8930e0ac34fffff",
+                    "H3PolygonStores": []
+                }
+              }
+            ]
+          }
+        },
+        { 
+          "PhysicalGroup": {
+            "name": "physicalGroup1",
+            "physicalGroupId": "6e887b97-81d9-46d7-8a85-8d098a0097a9",
+            "PhysicalGroupH3Polygons": [
+              {
+                "H3Polygon": {
+                  "h3Index": "8930e1d925bffff",
+                  "H3PolygonStores": []
+                }
+              },
+              {
+                "H3Polygon": {
+                  "h3Index": "8930e1d9243ffff",
+                  "H3PolygonStores": []
+                }
+              },
+              {
+                "H3Polygon": {
+                  "h3Index": "8930e1d924fffff",
+                  "H3PolygonStores": []
+                }
+              },
+              {
+                "H3Polygon": {
+                  "h3Index": "8930e1d9247ffff",
+                  "H3PolygonStores": []
+                }
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

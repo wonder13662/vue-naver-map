@@ -1,0 +1,38 @@
+@mixin fonts($fontSize, $lineHeight, $fontWeight, $letterSpacing: -0.4px) {
+  font-size: $fontSize;
+  font-weight: $fontWeight;
+  line-height: $lineHeight;
+  letter-spacing: $letterSpacing;
+}
+
+@mixin brgH1($fontWeight: 300) {
+  @include fonts(32px, 36px, $fontWeight);
+}
+
+@mixin brgH2($fontWeight: 300) {
+  @include fonts(28px, 32px, $fontWeight);
+}
+
+@mixin brgH3($fontWeight: 300) {
+  @include fonts(24px, 28px, $fontWeight);
+}
+
+@mixin brgH4($fontWeight: 300) {
+  @include fonts(20px, 24px, $fontWeight);
+}
+
+@mixin brgXlg($fontWeight: 300) {
+  @include fonts(18px, 20px, $fontWeight);
+}
+
+@mixin brgLg($fontWeight: 300) {
+  @include fonts(16px, 18px, $fontWeight);
+}
+
+@mixin brgMd($fontWeight: 300) {
+  @include fonts(14px, 16px, $fontWeight);
+}
+
+@mixin brgSm($fontWeight: 300) {
+  @include fonts(12px, 14px, $fontWeight);
+}

@@ -1,0 +1,18 @@
+@import './color-palette';
+
+$primaryColor: $blue500;
+
+$textMainColor: $grey900;
+$textSubColor: $grey800;
+$textCaptionColor: $grey700;
+
+$buttonPrimaryColor: $blue500;
+$buttonDefaultColor: $grey500;
+
+$smScreenMaxWidth: 640px;
+$lgScreenMinWidth: $smScreenMaxWidth + 1;
+
+:export {
+  smScreenMaxWidth: $smScreenMaxWidth;
+  lgScreenMinWidth: $lgScreenMinWidth;
+}

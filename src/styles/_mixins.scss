@@ -1,0 +1,14 @@
+@import '~@/styles/variables';
+@import '~@/styles/fonts';
+
+@mixin sm {
+  @media (max-width: $smScreenMaxWidth) {
+    @content;
+  }
+}
+
+@mixin lg {
+  @media (min-width: $lgScreenMinWidth) {
+    @content;
+  }
+}
